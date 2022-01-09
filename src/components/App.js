@@ -14,7 +14,7 @@ function App() {
 
 /* To dynamically render astronomy data: */
 
-  /* const search = event => {
+  const search = event => {
     if(event.key === "Enter") {
       fetch(`${BASE_URL}${apiKey}&${query}`)
         .then(res => res.json() )
@@ -24,7 +24,7 @@ function App() {
           console.log("Here is astronomy data:", result);
         } );
     }
-  }; */
+  };
 
 
  /*  fetch(`${BASE_URL}${apiKey}&${query}`)
@@ -41,6 +41,7 @@ function App() {
       <HomePage query={query} setQuery={setQuery} astronomy={astronomy} setAstronomy={setAstronomy}
         apiKey={apiKey}
         BASE_URL={BASE_URL}
+        search={search}
       />
 
     </div>

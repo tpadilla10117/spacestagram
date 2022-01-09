@@ -6,7 +6,7 @@
 
 /* Components: */
 
-    export { default as SearchBox } from '../components/SearchBox';
+    export { default as SearchBox } from '../components/searchbox/SearchBox.jsx';
     
     export { default as LocationBox } from '../components/LocationBox';
 
