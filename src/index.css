@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'montseratt', sans-serif;
+}
+
+.App {
+  background-image: url('./assets/cold-bg.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.8s ease-in-out;
+}
+
+.App.warm {
+  background-image: url('./assets/warm-bg.jpg') ;
+}
