@@ -10,6 +10,8 @@
 
 - 1) Create .env file, making sure to add an API key from ___ to your .gitignore file (***NEVER SHARE API KEYS!!!***)
 - 2) `npm i node-modules`
+- 3) `npm i dotenv`
+- 4) `npm i node-sass` & `npm i sass`
 
 ## Tech Stack:
 

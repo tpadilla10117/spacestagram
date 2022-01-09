@@ -1,13 +1,16 @@
 import React from 'react';
-import './Home.css';
+import './Home.scss';
+import { AstronomyCards } from '../../components/utils';
 
 const HomePage = (props) => {
 
+    const {query, setQuery, astronomy, setAstronomy, apiKey, BASE_URL} = props;
     
-
     return (
-        <main>
+        <main id="homepage-container">
+
             
+            <AstronomyCards />
 
         </main>
     );

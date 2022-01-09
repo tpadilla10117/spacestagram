@@ -11,3 +11,5 @@
     export { default as LocationBox } from '../components/LocationBox';
 
     export { default as WeatherBox} from '../components/WeatherBox';
+
+    export { default as AstronomyCards} from '../components/astronomycards/AstronomyCards.jsx';
