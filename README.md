@@ -1,10 +1,10 @@
 # App Description
 
-- weather-react is a simple weather-tracking web-application in which users can query/search for the weather conditions in a given location around the world.
+- Spacestagram is an app that can pull images, and allow the user to “like” and “unlike” their favourite images.
 
 ## Deployment:
 
-https://affectionate-bell-bcf7a5.netlify.app/
+
 
 ## Usage Instructions:
 
@@ -15,7 +15,7 @@ https://affectionate-bell-bcf7a5.netlify.app/
 
 ## Tech Stack:
 
-- Node.js, JS, React.js, HTML, CSS
+- Node.js, JS, React.js, HTML, SCSS
 - OpenWeather API { https://openweathermap.org/api }
 
 ## Limitations:
