@@ -3,34 +3,42 @@ import { HomePage} from './utils';
 
 require('dotenv').config();
 
-const apiKey = process.env.REACT_APP_WEATHER_KEY;
+const apiKey = process.env.REACT_APP_ASTRONOMY_KEY;
 
-/* console.log(process.env); */
-const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+console.log(process.env.REACT_APP_ASTRONOMY_KEY);
+const BASE_URL = 'https://api.nasa.gov/planetary/apod?api_key=';
 
 function App() {
 
   const [query, setQuery] = useState('');
-  const [weather, setWeather] = useState({});
+  const [astronomy, setAstronomy] = useState({});
 
-/* To dynamically render weather data: */
+/* To dynamically render astronomy data: */
   const search = event => {
     if(event.key === "Enter") {
-      fetch(`${BASE_URL}/weather?q=${query}&units=metric&APPID=${apiKey}`)
+      fetch(`${BASE_URL}${apiKey}&${query}`)
         .then(res => res.json() )
         .then(result => {
           setQuery('');
-          setWeather(result);
-          console.log("Here is the weather:", result);
+          setAstronomy(result);
+          console.log("Here is astronomy data:", result);
         } );
     }
   };
 
 
-  return (
-    <div className={ (typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'App warm' : 'App') : 'App' }>
+  /* fetch(`${BASE_URL}api_key=${apiKey}&${query}`)
+        .then(res => res.json() )
+        .then(result => {
+          setQuery('date=2014-10-01')
+          setAstronomy(result);
+          console.log("Here is astronomy data:", result);
+        } ); */
 
-      <HomePage query={query} setQuery={setQuery} weather={weather} setWeather={setWeather} search={search}
+  return (
+    <div>
+
+      <HomePage query={query} setQuery={setQuery} astronomy={astronomy} setAstronomy={setAstronomy} search={search}
         apiKey={apiKey}
         BASE_URL={BASE_URL}
       />
