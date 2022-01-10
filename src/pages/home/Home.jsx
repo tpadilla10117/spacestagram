@@ -10,7 +10,7 @@ const HomePage = (props) => {
         <main id="homepage-container">
 
             <SearchBox query={query} setQuery={setQuery} search={search}  />
-            <AstronomyCards />
+            <AstronomyCards astronomy={astronomy} />
 
         </main>
     );

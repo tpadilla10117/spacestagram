@@ -1,18 +1,22 @@
 import React from 'react';
 import './AstronomyCards.scss';
 
-function AstronomyCards() {
+function AstronomyCards(props) {
+
+    const {astronomy} = props;
+
     return (
         <section id='astronomycard-container'>
             <article className='astronomycard'>
-                <h1 className='atronomycard-heading'>
-                Sample
-                </h1>
+                <small className='astronomycard-id'>{astronomy.date}</small>
+                <h1 className='atronomycard-heading'>{astronomy.title}</h1>
 
-                <img className='astronomycard-img' src="" alt=""/>
+                <div className='astronomycard-img-container'> 
+                    <img className='astronomycard-img' src={astronomy.url} alt=""/>
+                </div>
 
-                <p className='astronomycard-details'>HEre is my details</p>
-                <p></p>
+                <p className='astronomycard-details'>{astronomy.explanation}</p>
+                <h3 className='astronomycard-date'>{astronomy.date}</h3>
 
                 <button className='astronomycard-likebtn'>Like</button>
 
