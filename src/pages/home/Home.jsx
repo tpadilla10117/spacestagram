@@ -11,16 +11,19 @@ const HomePage = (props) => {
         <main id="homepage-container">
 
             <SearchBox query={query} setQuery={setQuery} search={search}  />
-            <AstronomyCards data={astronomy} setAstronomy={setAstronomy} apiKey={apiKey} BASE_URL={BASE_URL}/>
 
-            {astronomy.length > 0 ? 
-                <Pagination data={astronomy} pageLimit={5} dataLimit={10} />
+            <div className='homepage-sections'>
+                {/* <AstronomyCards data={astronomy} setAstronomy={setAstronomy} apiKey={apiKey} BASE_URL={BASE_URL}/> */}
 
-             :
-            
-                <h1>No Additional Data to Display</h1>
-            
-            }
+                {astronomy.length > 0 ? 
+                    <Pagination data={astronomy} pageLimit={5} dataLimit={10} />
+
+                :
+                
+                    <h1>No Additional Data to Display</h1>
+                
+                }
+            </div>
 
             {/* <Pagination data={astronomy} pageLimit={5} dataLimit={10} /> */}
 

@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './AstronomyCards.scss';
 
 function AstronomyCards(props) {
 
     const {date, url, copyright, title, explanation} = props.data;
+
+    const [likes, setLikes] = useState(0);
+    const [liked, setLiked] = useState(false);
+
+/* .astronomycard-likebtn functionality: */
+    function onLikeClick() {
+        console.log("Clicked");
+        setLikes( (num) => num + 1);
+        console.log("Num of likes: ", likes);
+
+
+        /* When you click the btn, can un-like it - btn in 'un-like' state */
+
+
+        /* When you click it in the un-liked stated, becomes a 'liked' state */
+    };
 
     return (
         <section id='astronomycard-container'>
@@ -28,7 +44,7 @@ function AstronomyCards(props) {
 
                 <p className='astronomycard-details'>{explanation}</p>
                 
-                <button className='astronomycard-likebtn'>
+                <button className='astronomycard-likebtn' onClick={onLikeClick}>
                     <p className='astronomycard-likebtn-txt'>Like</p>
                 </button>
 
