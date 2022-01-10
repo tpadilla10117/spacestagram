@@ -12,23 +12,20 @@ function AstronomyCards(props) {
 
 /* .astronomycard-likebtn functionality: */
     function onLikeClick() {
-        console.log("Clicked");
         setLikes( (num) => num + 1);
-        setLiked(true)
-        console.log("Num of likes: ", likes);
-        console.log("The btn is liked: ", liked);
-        /* TODO: Toggle the 'liked' state */
-        console.log("The card's index:", props.idx)
+        handleLikeState();
     };
 
 
 /* "liked" state toggler: */
-    /* function handleLikeState(event) {
+    function handleLikeState() {
         if(liked === false) {
             setLiked(true);
-            
+            /* localStorage.setItem(liked); */
+        } else {
+            setLiked(false);
         }
-    }; */
+    };
 
 
 /* console.log("Any index? : ",props.idx ) */
