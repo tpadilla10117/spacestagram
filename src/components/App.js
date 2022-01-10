@@ -12,16 +12,22 @@ const BASE_URL = 'https://api.nasa.gov/planetary/apod?api_key=';
 function App() {
 
   const [query, setQuery] = useState('');
-  const [astronomy, setAstronomy] = useState({}); // My posts
+  const [astronomy, setAstronomy] = useState([]); // My posts
   const [error, setError] = useState('');
-  const progress = new ProgressBar();
+  
+  const progress = new ProgressBar( {
+    size: 4,
+    color: '#FE595E',
+    className: 'z-50',
+    delay: 100, //delay between start and finish
+  })
 
   setTimeout( () => {
     progress.finish()
   }, 1000)
 
 /* To dynamically render astronomy data: */
-  /* E.g. date=2017-07-08 */
+  /* E.g. date=2017-07-08 or date=2014-10-01*/
   const search = event => {
     if(event.key === "Enter") {
       fetch(`${BASE_URL}${apiKey}&${query}`)
@@ -38,10 +44,10 @@ function App() {
 /* Main API fetch call: */
 
 useEffect(() => {
-  /* fetch(`${BASE_URL}${apiKey}&start_date=2017-07-08&end_date=2017-07-20
-`) */
+  fetch(`${BASE_URL}${apiKey}&start_date=2017-07-08&end_date=2017-07-20
+`)
 /* fetch(`${BASE_URL}${apiKey}&count=100`) */
-fetch(`${BASE_URL}${apiKey}`)
+/* fetch(`${BASE_URL}${apiKey}`) */
     .then((res) => {
       if (res.ok) return res.json();
       throw new Error('An Error occurred when fetching posts');
@@ -50,14 +56,12 @@ fetch(`${BASE_URL}${apiKey}`)
     .catch((error) => setError(error.message));
 }, []);
 
+
+
 console.log(astronomy);
- /*  fetch(`${BASE_URL}${apiKey}&${query}`)
-        .then(res => res.json() )
-        .then(result => {
-          setQuery('date=2014-10-01')
-          setAstronomy(result);
-          console.log("Here is astronomy data:", result);
-        } ); */
+
+/* Error Handling: */
+  if (error) return <h1>{error}</h1>
 
   return (
     <div className='App'>
