@@ -139,29 +139,61 @@
         border: none;
         outline: none;
         border-radius: 20px;
-        background: #4FB2E7;
+        background: #777;
         /* color: #fff; */
-        box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 5px 0 0 rgb(0 0 0 / 10%);
         transition: all 0.3s ease 0s;
         font-size: 16px;
         /* font-weight: bolder; */
         /* font-family: "Lora", sans-serif; */
         margin-top: 15px;
 
-        &:hover {
-            background-color: #36BF9D; //Mountain Meadow
-            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-            color: #fff;
-            transform: translateY(-7px)
-        }
-
-        &.active {
-            background: #fb3958;
+        .astronomycard-likebtn-heart {
+            stroke: #FFF;
+            stroke-width: 1px;
+            transition: all 150ms ease-in-out;
+                
         }
 
         .astronomycard-likebtn-txt {
             padding: 5px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            text-transform: none;
         }
+
+        &:hover {
+            background-color: #36BF9D; //Mountain Meadow
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+
+            .astronomycard-likebtn-heart {
+                transform: scale(1.1);
+            }
+            
+        }
+
+        /* &:hover.astronomycard-likebtn-heart{
+            transform: scale(1.1);
+        } */
+
+        &.active {
+            background: #FFF;
+
+            .astronomycard-likebtn-heart {
+                fill: #fb3958;
+                stroke: none;
+                
+            }
+
+            .astronomycard-likebtn-txt {
+                color: #fb3958;
+            }
+
+            &:hover {
+                box-shadow: 0px 15px 20px #777;
+            }
+        }
+
     }
 }

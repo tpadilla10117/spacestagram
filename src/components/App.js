@@ -13,6 +13,9 @@ function App() {
 
   const [query, setQuery] = useState('');
   const [astronomy, setAstronomy] = useState([]); // My posts
+/* might be getStoredLocalData() */
+
+
   const [error, setError] = useState('');
   
   const progress = new ProgressBar( {
@@ -41,24 +44,52 @@ function App() {
     }
   };
 
+  /* setAstronomy(JSON.parse(localStorage.getItem('initial-posts'))) */
+
+  function getStoredLocalData() {
+    const localData = JSON.parse(localStorage.getItem('initial-posts'));
+
+    console.log("Here is the localData: ", localData);
+    setAstronomy(localData);
+  }
+
+  /* getStoredLocalData(); */
+
+
+  function storeCurrentData(postdata) {
+    localStorage.setItem('initial-posts', JSON.stringify(postdata) )
+  };
+
 /* Main API fetch call: */
 
 useEffect(() => {
-  fetch(`${BASE_URL}${apiKey}&start_date=2017-07-08&end_date=2017-07-20
-`)
-/* fetch(`${BASE_URL}${apiKey}&count=100`) */
-/* fetch(`${BASE_URL}${apiKey}`) */
-    .then((res) => {
-      if (res.ok) return res.json();
-      throw new Error('An Error occurred when fetching posts');
-    })
-    .then((posts) => setAstronomy(posts))
-    .catch((error) => setError(error.message));
-}, []);
+ 
+    async function fetchData() {
+      fetch(`${BASE_URL}${apiKey}&start_date=2017-07-08&end_date=2017-07-20
+  `)
+  /* fetch(`${BASE_URL}${apiKey}&count=100`) */
+  /* fetch(`${BASE_URL}${apiKey}`) */
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw new Error('An Error occurred when fetching posts');
+      })
+      .then((posts) => setAstronomy(posts))
+      .catch((error) => setError(error.message));
+    }
+ 
+    fetchData();
+    
+} , []);
+
+
+/* Persisting the initial fetch in local-storage: */
+useEffect( () => {
+  storeCurrentData(astronomy)
+}, [astronomy]);
 
 
 
-console.log(astronomy);
+console.log("Here is my astronomy data: ", astronomy);
 
 /* Error Handling: */
   if (error) return <h1>{error}</h1>

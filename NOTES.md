@@ -24,4 +24,4 @@ https://api.nasa.gov/planetary/apod?api_key=wd5U8KXHEwH3VFh4LFzXqeqMIW4vUjMqn7Et
     - {https://sass-lang.com/install} 
 
 
-<!-- TODO: Need to troubleshoot the pagination data -->
+<!-- TODO: Need to maintain liked state with local storage, as well as render the retrieved API data from localStorage -->
