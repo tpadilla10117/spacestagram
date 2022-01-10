@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { HomePage} from './utils';
+import ProgressBar from "@badrap/bar-of-progress";
+/* TODO: Try to get progress bar to work... */
 
 require('dotenv').config();
 
@@ -12,16 +14,22 @@ function App() {
   const [query, setQuery] = useState('');
   const [astronomy, setAstronomy] = useState({}); // My posts
   const [error, setError] = useState('');
+  const progress = new ProgressBar();
+
+  setTimeout( () => {
+    progress.finish()
+  }, 1000)
 
 /* To dynamically render astronomy data: */
-
+  /* E.g. date=2017-07-08 */
   const search = event => {
     if(event.key === "Enter") {
       fetch(`${BASE_URL}${apiKey}&${query}`)
-        .then(res => res.json() )
+        .then(res => res.json())
         .then(result => {
           setQuery('');
           setAstronomy(result);
+          /* setTimeout(); */
           console.log("Here is astronomy data:", result);
         } );
     }
@@ -30,7 +38,10 @@ function App() {
 /* Main API fetch call: */
 
 useEffect(() => {
-  fetch(`${BASE_URL}${apiKey}`)
+  /* fetch(`${BASE_URL}${apiKey}&start_date=2017-07-08&end_date=2017-07-20
+`) */
+/* fetch(`${BASE_URL}${apiKey}&count=100`) */
+fetch(`${BASE_URL}${apiKey}`)
     .then((res) => {
       if (res.ok) return res.json();
       throw new Error('An Error occurred when fetching posts');
