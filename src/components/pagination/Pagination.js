@@ -42,7 +42,7 @@ const getPaginatedGroup = () => {
     return new Array(pageLimit).fill().map( (_, idx) => pageStart + idx + 1);
 };
 
-console.log(data.length)
+console.log(data[1])
 
     return (
         <article id="pagination">
@@ -51,7 +51,7 @@ console.log(data.length)
 
         {/* Show up to 10 posts at a time: */}
             {getPaginatedData().map( (data, idx) => (
-                <AstronomyCards data={data} /* data={data} */ key={idx} />
+                <AstronomyCards data={data} /* data={data} */ idx={idx} key={idx} />
             ))}
 
             </section>

@@ -155,6 +155,10 @@
             transform: translateY(-7px)
         }
 
+        &.active {
+            background: #fb3958;
+        }
+
         .astronomycard-likebtn-txt {
             padding: 5px;
             letter-spacing: 2px;

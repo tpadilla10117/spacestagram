@@ -5,6 +5,8 @@ function AstronomyCards(props) {
 
     const {date, url, copyright, title, explanation} = props.data;
 
+    
+
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
 
@@ -12,15 +14,24 @@ function AstronomyCards(props) {
     function onLikeClick() {
         console.log("Clicked");
         setLikes( (num) => num + 1);
+        setLiked(true)
         console.log("Num of likes: ", likes);
-
-
-        /* When you click the btn, can un-like it - btn in 'un-like' state */
-
-
-        /* When you click it in the un-liked stated, becomes a 'liked' state */
+        console.log("The btn is liked: ", liked);
+        /* TODO: Toggle the 'liked' state */
+        console.log("The card's index:", props.idx)
     };
 
+
+/* "liked" state toggler: */
+    /* function handleLikeState(event) {
+        if(liked === false) {
+            setLiked(true);
+            
+        }
+    }; */
+
+
+/* console.log("Any index? : ",props.idx ) */
     return (
         <section id='astronomycard-container'>
             <article className='astronomycard'>
@@ -44,7 +55,7 @@ function AstronomyCards(props) {
 
                 <p className='astronomycard-details'>{explanation}</p>
                 
-                <button className='astronomycard-likebtn' onClick={onLikeClick}>
+                <button className={liked ? 'astronomycard-likebtn active' : 'astronomycard-likebtn' } onClick={onLikeClick}>
                     <p className='astronomycard-likebtn-txt'>Like</p>
                 </button>
 
