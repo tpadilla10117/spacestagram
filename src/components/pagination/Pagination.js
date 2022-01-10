@@ -40,17 +40,29 @@ const getPaginatedGroup = () => {
 console.log(data.length)
 
     return (
-        <section id="pagination">
+        <article id="pagination">
             <h1>{data.title}</h1>
-
-           {/*  {getPaginatedData().map( (data, idx) => (
-                <AstronomyCards astronomy={astronomy} data={data} key={idx} />
-            ))} */}
+            <section className='paginateddata-container'>
+            {getPaginatedData().map( (data, idx) => (
+                <AstronomyCards data={data} /* data={data} */ key={idx} />
+            ))}
+            </section>
 
             <div>
                 <button onClick={previousPage} className={`pagination-prev ${currentPage === 1 ? 'disabled' : ''}`}>
                     <p>Prev</p>
                 </button>
+
+            {/* Get Paginated group: */}
+                {getPaginatedGroup().map( (item, idx) => (
+                    <button
+                        key={idx}
+                        onClick={changePage}
+                        className={`paginationItem ${currentPage === item ? 'active' : null}`}
+                    >
+                        <span>{item}</span>
+                    </button>
+                ))}
 
 
                 <button onClick={nextPage} className={`pagination-next ${currentPage === pages ? 'disabled' : ''}`}>
@@ -62,7 +74,7 @@ console.log(data.length)
             
             
             
-        </section>
+        </article>
     );
 };
 
