@@ -1,0 +1,32 @@
+#pagination {
+    .pagination-next, .pagination-prev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-transform: uppercase;
+        width: 100px;
+        height: 40px;
+        border: none;
+        outline: none;
+        /* border-radius: 20px; */
+        background: #4FB2E7;
+        box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        font-size: 16px;
+        margin-top: 15px;
+        
+
+        &:hover {
+            background-color: #36BF9D; //Mountain Meadow
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #fff;
+            transform: translateY(-7px)
+        }
+
+        p {
+            padding: 5px;
+            letter-spacing: 2px;
+        }
+    }
+}

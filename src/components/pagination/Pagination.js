@@ -1,7 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import {AstronomyCards} from '../utils';
+import './Pagination.scss';
 
-function Pagination({ data, RenderComponent, title, pageLimit, dataLimit}) {
+const Pagination = ({ data, /* RenderComponent, */ astronomy, title, pageLimit, dataLimit}) => {
 
+const [pages] = useState(Math.round(astronomy.length / dataLimit));
 const [currentPage, setCurrentPage] = useState(1);
 
 /* NextPage Button: */
@@ -35,8 +38,27 @@ const getPaginatedGroup = () => {
 };
 
     return (
-        <section>
+        <section id="pagination">
             <h1>Title</h1>
+
+            {/* {getPaginatedData().map( (data, idx) => (
+                <AstronomyCards astronomy={astronomy} data={data} key={idx} />
+            ))} */}
+
+            <div>
+                <button onClick={previousPage} className={`pagination-prev ${currentPage === 1 ? 'disabled' : ''}`}>
+                    <p>Prev</p>
+                </button>
+
+
+                <button onClick={nextPage} className={`pagination-next ${currentPage === pages ? 'disabled' : ''}`}>
+                    <p>Next</p>
+                </button>
+            </div>
+
+            
+            
+            
             
         </section>
     );
