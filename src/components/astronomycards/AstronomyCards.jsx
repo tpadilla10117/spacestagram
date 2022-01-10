@@ -9,24 +9,25 @@ function AstronomyCards(props) {
         <section id='astronomycard-container'>
             <article className='astronomycard'>
                 <small className='astronomycard-id'>{astronomy.date}</small>
-                <h1 className='atronomycard-heading'>{astronomy.title}</h1>
 
-                <div className='astronomycard-img-container'> 
+                <section className='astronomycard-img-container'> 
 
-                    <div className='astronomycard-img-wrapper'>
+                    <figure className='astronomycard-img-wrapper'>
                         <img className='astronomycard-img' src={astronomy.url} alt=""/>
 
-                    </div>
+                    </figure>
 
-                    <div className='astronomycard-copyright-container'>
+                    <figcaption className='astronomycard-copyright-container'>
                         <p className='astronomycard-copyright'>{astronomy.copyright}</p>
-                    </div>
+                    </figcaption>
 
-                </div>
+                </section>
 
-                <p className='astronomycard-details'>{astronomy.explanation}</p>
+                <h1 className='atronomycard-heading'>{astronomy.title}</h1>
                 <h3 className='astronomycard-date'>{astronomy.date}</h3>
 
+                <p className='astronomycard-details'>{astronomy.explanation}</p>
+                
                 <button className='astronomycard-likebtn'>
                     <p className='astronomycard-likebtn-txt'>Like</p>
                 </button>

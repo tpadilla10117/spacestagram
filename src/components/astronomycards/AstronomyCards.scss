@@ -4,18 +4,21 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    max-width: 500px;
     margin: 20px auto;
-    padding: 15px 10px;
-    background: #fff;
+    padding: 20px;
+    /* background: #fff; */
+    backdrop-filter: blur(20px);
+    border: .7px solid rgba(255,255,255,.2);
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100% ), linear-gradient(190deg, rgba(0,0,0,0.2) 0%, transparent 100%);
 
     .astronomycard-id {
         
-        border: 2px solid #777;
+        border: 1px solid #777;
         border-radius: 7px;
         padding: 5px 12px;
-        color: #777;
-          
+        color: #B66767;
+        margin: 10px;
     }
 
     .astronomycard-img-container {
@@ -27,8 +30,9 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        margin: 30px;
+        margin: 50px;
         transition: .8s;
+        max-width: 100%;
         /* border-radius: 30px; */
         box-shadow: 0px 8px 15px rgb(0 0 0 / 30%);
 
@@ -105,12 +109,10 @@
             align-items: flex-end;
 
             .astronomycard-copyright {
-                color: #fff;
+                /* color: #fff; */
                 transform: translateY(200px);
                 transition: 0.5s;
                 font-size: 16px;
-                /*  font-family: 'Amatic SC', sans-serif; */
-                /* font-family: 'Lora', sans-serif; */
                 /* font-weight: 500; */
             }
 
@@ -137,8 +139,8 @@
         border: none;
         outline: none;
         border-radius: 20px;
-        background: #60D2B6;
-        color: #fff;
+        background: #4FB2E7;
+        /* color: #fff; */
         box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
         transition: all 0.3s ease 0s;
         font-size: 16px;

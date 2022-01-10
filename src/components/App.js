@@ -36,7 +36,7 @@ function App() {
         } ); */
 
   return (
-    <div>
+    <div className='App'>
 
       <HomePage query={query} setQuery={setQuery} astronomy={astronomy} setAstronomy={setAstronomy}
         apiKey={apiKey}
