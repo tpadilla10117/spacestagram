@@ -29,17 +29,17 @@ function App() {
 
 /* Main API fetch call: */
 
-/* useEffect(() => {
+useEffect(() => {
   fetch(`${BASE_URL}${apiKey}`)
-    .then((response) => {
-      if (response.ok) return response.json();
-      throw new Error('something went wrong while requesting posts');
+    .then((res) => {
+      if (res.ok) return res.json();
+      throw new Error('An Error occurred when fetching posts');
     })
     .then((posts) => setAstronomy(posts))
     .catch((error) => setError(error.message));
-}, []); */
+}, []);
 
-
+console.log(astronomy);
  /*  fetch(`${BASE_URL}${apiKey}&${query}`)
         .then(res => res.json() )
         .then(result => {
