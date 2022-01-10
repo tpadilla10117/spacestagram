@@ -19,6 +19,14 @@
         grid-template-columns: 1fr 1fr; */
         /* height: 3000px;
         overflow-y: scroll; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .homepage-intro {
+        
+        }
     }
 
   }

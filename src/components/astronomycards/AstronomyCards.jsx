@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './AstronomyCards.scss';
 
 function AstronomyCards(props) {
 
     const {date, url, copyright, title, explanation} = props.data;
-
-    
 
     const [likes, setLikes] = useState(0);
     const [liked, setLiked] = useState(false);
@@ -14,6 +12,7 @@ function AstronomyCards(props) {
     function onLikeClick() {
         setLikes( (num) => num + 1);
         handleLikeState();
+        /* persistLikeState(); */
     };
 
 
@@ -26,6 +25,19 @@ function AstronomyCards(props) {
             setLiked(false);
         }
     };
+
+/* For persisting 'liked' state: */
+    function persistLikeState(card) {
+        if( card.hasClass("active") ) {
+            localStorage.setItem('liked-state', true);
+        } else {
+            localStorage.removeItem('liked-state', false)
+        }
+    };
+
+    /* function handleChange(event) {
+        console.log("handleChange firing: ", event.target.value)
+    } */
 
 
 /* console.log("Any index? : ",props.idx ) */
@@ -42,7 +54,7 @@ function AstronomyCards(props) {
                     </figure>
 
                     <figcaption className='astronomycard-copyright-container'>
-                        <p className='astronomycard-copyright'>© {copyright}</p>
+                        <p className='astronomycard-copyright'> {copyright ? `© ${copyright}` : '' }</p>
                     </figcaption>
 
                 </section>
@@ -52,7 +64,7 @@ function AstronomyCards(props) {
 
                 <p className='astronomycard-details'>{explanation}</p>
                 
-                <button className={liked ? 'astronomycard-likebtn active' : 'astronomycard-likebtn' } onClick={onLikeClick}>
+                <button type="button" id={props.idx} className={liked ? 'astronomycard-likebtn active' : 'astronomycard-likebtn' } onClick={onLikeClick}>
                     <p className='astronomycard-likebtn-txt'>Like</p>
                 </button>
 
