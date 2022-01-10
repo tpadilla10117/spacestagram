@@ -27,7 +27,9 @@ function AstronomyCards(props) {
                 <p className='astronomycard-details'>{astronomy.explanation}</p>
                 <h3 className='astronomycard-date'>{astronomy.date}</h3>
 
-                <button className='astronomycard-likebtn'>Like</button>
+                <button className='astronomycard-likebtn'>
+                    <p className='astronomycard-likebtn-txt'>Like</p>
+                </button>
 
 
             </article>
