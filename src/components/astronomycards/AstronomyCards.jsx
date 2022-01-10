@@ -13,8 +13,12 @@ function AstronomyCards(props) {
 
                 <div className='astronomycard-img-container'> 
                     <img className='astronomycard-img' src={astronomy.url} alt=""/>
-                </div>
 
+                    <div className='astronomycard-copyright-container'>
+                        <p className='astronomycard-copyright'>{astronomy.copyright}</p>
+                    </div>
+
+                </div>
                 <p className='astronomycard-details'>{astronomy.explanation}</p>
                 <h3 className='astronomycard-date'>{astronomy.date}</h3>
 
