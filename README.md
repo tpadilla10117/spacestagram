@@ -18,6 +18,10 @@
 - Node.js, JS, React.js, HTML, SCSS
 - OpenWeather API { https://openweathermap.org/api }
 
+## Dependencies:
+
+- {https://github.com/badrap/bar-of-progress} -> `npm i @badrap/bar-of-progress`
+
 ## Limitations:
 
 - As of 10/13/21, no error messages provided to users if query does not exist

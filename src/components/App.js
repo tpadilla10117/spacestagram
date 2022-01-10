@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { HomePage} from './utils';
 
 require('dotenv').config();
@@ -10,7 +10,8 @@ const BASE_URL = 'https://api.nasa.gov/planetary/apod?api_key=';
 function App() {
 
   const [query, setQuery] = useState('');
-  const [astronomy, setAstronomy] = useState({});
+  const [astronomy, setAstronomy] = useState({}); // My posts
+  const [error, setError] = useState('');
 
 /* To dynamically render astronomy data: */
 
@@ -25,6 +26,18 @@ function App() {
         } );
     }
   };
+
+/* Main API fetch call: */
+
+/* useEffect(() => {
+  fetch(`${BASE_URL}${apiKey}`)
+    .then((response) => {
+      if (response.ok) return response.json();
+      throw new Error('something went wrong while requesting posts');
+    })
+    .then((posts) => setAstronomy(posts))
+    .catch((error) => setError(error.message));
+}, []); */
 
 
  /*  fetch(`${BASE_URL}${apiKey}&${query}`)

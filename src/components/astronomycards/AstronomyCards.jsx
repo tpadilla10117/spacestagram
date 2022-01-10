@@ -18,7 +18,7 @@ function AstronomyCards(props) {
                     </figure>
 
                     <figcaption className='astronomycard-copyright-container'>
-                        <p className='astronomycard-copyright'>{astronomy.copyright}</p>
+                        <p className='astronomycard-copyright'>© {astronomy.copyright}</p>
                     </figcaption>
 
                 </section>
