@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {AstronomyCards} from '../utils';
 import './Pagination.scss';
 
@@ -6,6 +6,11 @@ const Pagination = ({ data, /* RenderComponent, */ pageLimit, dataLimit}) => {
 
 const [pages] = useState(Math.round(data.length / dataLimit));
 const [currentPage, setCurrentPage] = useState(1);
+
+/* To scroll back to the top of the page after user changes: */
+useEffect( () => {
+    window.scrollTo({ behavior: 'smooth', top: '0px'});
+}, [currentPage]);
 
 /* NextPage Button: */
 function nextPage() {
@@ -42,23 +47,26 @@ console.log(data.length)
     return (
         <article id="pagination">
             <h1>{data.title}</h1>
-            <section className='paginateddata-container'>
+            <section className='pagination-data-container'>
+
+        {/* Show up to 10 posts at a time: */}
             {getPaginatedData().map( (data, idx) => (
                 <AstronomyCards data={data} /* data={data} */ key={idx} />
             ))}
+
             </section>
 
-            <div>
+            <div className='pagination-interactions'>
                 <button onClick={previousPage} className={`pagination-prev ${currentPage === 1 ? 'disabled' : ''}`}>
                     <p>Prev</p>
                 </button>
 
-            {/* Get Paginated group: */}
+            {/* Reveal pg numbers: */}
                 {getPaginatedGroup().map( (item, idx) => (
                     <button
                         key={idx}
                         onClick={changePage}
-                        className={`paginationItem ${currentPage === item ? 'active' : null}`}
+                        className={`pagination-item ${currentPage === item ? 'active' : null}`}
                     >
                         <span>{item}</span>
                     </button>

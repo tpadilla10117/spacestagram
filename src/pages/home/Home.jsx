@@ -12,7 +12,17 @@ const HomePage = (props) => {
 
             <SearchBox query={query} setQuery={setQuery} search={search}  />
             <AstronomyCards data={astronomy} setAstronomy={setAstronomy} apiKey={apiKey} BASE_URL={BASE_URL}/>
-            <Pagination data={astronomy} pageLimit={5} dataLimit={10} />
+
+            {astronomy.length > 0 ? 
+                <Pagination data={astronomy} pageLimit={5} dataLimit={10} />
+
+             :
+            
+                <h1>No Additional Data to Display</h1>
+            
+            }
+
+            {/* <Pagination data={astronomy} pageLimit={5} dataLimit={10} /> */}
 
         </main>
     );
