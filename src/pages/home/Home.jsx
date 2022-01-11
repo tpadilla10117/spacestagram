@@ -13,9 +13,11 @@ const HomePage = (props) => {
             <SearchBox query={query} setQuery={setQuery} search={search}  />
 
 
-            <div className='homepage-sections'>
+            <article className='homepage-sections'>
+                <div className='homepage-intro-container'>
 
                 <h1 className='homepage-intro'>Welcome to Spacestagram!</h1>
+                </div>
 
                 {/* <AstronomyCards data={astronomy} setAstronomy={setAstronomy} apiKey={apiKey} BASE_URL={BASE_URL}/> */}
 
@@ -30,7 +32,7 @@ const HomePage = (props) => {
                 }
 
                 
-            </div>
+            </article>
 
             {/* <Pagination data={astronomy} pageLimit={5} dataLimit={10} /> */}
 
