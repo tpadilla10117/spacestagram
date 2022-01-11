@@ -12,19 +12,26 @@
 - 2) `npm i node-modules`
 - 3) `npm i dotenv`
 - 4) `npm i node-sass` & `npm i sass`
+- 5) `npm i @badrap/bar-of-progress`
 
 ## Tech Stack:
 
 - Node.js, JS, React.js, HTML, SCSS
-- OpenWeather API { https://openweathermap.org/api }
+- NASA APOD API { https://github.com/nasa/apod-api }
 
 ## Dependencies:
 
-- {https://github.com/badrap/bar-of-progress} -> `npm i @badrap/bar-of-progress`
+### `npm i @badrap/bar-of-progress` {https://github.com/badrap/bar-of-progress} 
+
+### `npm i dotenv` => To load environment variables from `.env` file to `process.env` object
+
+Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
+
+- react, react-dom, react-scripts, sass, node-sass, cors
 
 ## Limitations:
 
-- As of 10/13/21, no error messages provided to users if query does not exist
+- As of 01/11/22, 
 
 ## Getting Started with Create React App
 
@@ -97,7 +104,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-
-### `npm i dotenv` => To load environment variables from `.env` file to `process.env` object
-
-Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/

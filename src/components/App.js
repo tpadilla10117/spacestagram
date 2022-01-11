@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { HomePage} from './utils';
-import ProgressBar from "@badrap/bar-of-progress";
+import { HomePage, /* ProgressBar */} from './utils';
+/* import ProgressBar from "@badrap/bar-of-progress"; */
 /* TODO: Try to get progress bar to work... */
 
 require('dotenv').config();
@@ -18,22 +18,23 @@ function App() {
 
   const [error, setError] = useState('');
   
-  const progress = new ProgressBar( {
+ /*  const progress = new ProgressBar( {
     size: 4,
     color: '#FE595E',
     className: 'z-50',
-    delay: 100, //delay between start and finish
+    delay: 100, 
   })
 
   setTimeout( () => {
     progress.finish()
-  }, 1000)
+  }, 2000) */
 
 /* To dynamically render astronomy data: */
   /* E.g. date=2017-07-08 or date=2014-10-01*/
   const search = event => {
     if(event.key === "Enter") {
       fetch(`${BASE_URL}${apiKey}&${query}`)
+        /* .then(progress.start() ) */
         .then(res => res.json())
         .then(result => {
           setQuery('');
@@ -96,7 +97,7 @@ console.log("Here is my astronomy data: ", astronomy);
 
   return (
     <div className='App'>
-
+      {/* <ProgressBar /> */}
       <HomePage query={query} setQuery={setQuery} astronomy={astronomy} setAstronomy={setAstronomy}
         apiKey={apiKey}
         BASE_URL={BASE_URL}

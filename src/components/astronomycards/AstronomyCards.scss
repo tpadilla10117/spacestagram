@@ -89,7 +89,6 @@
                 width: 100%;
                 height: 100%;
                 z-index: 1;
-                /* background: linear-gradient(180deg,#00D1FF ,#00BF58); */
                 mix-blend-mode: multiply;
                 opacity: 0;
                 transition: 0.5s;
@@ -109,11 +108,9 @@
             align-items: flex-end;
 
             .astronomycard-copyright {
-                /* color: #fff; */
                 transform: translateY(200px);
                 transition: 0.5s;
                 font-size: 16px;
-                /* font-weight: 500; */
             }
 
         }
@@ -145,12 +142,6 @@
         font-size: 16px;
         margin-top: 15px;
 
-        /* &:active {
-           
-           transform: scale(1.1);
-           
-        } */
-
         .astronomycard-likebtn-heart {
             stroke: #FFF;
             stroke-width: 1px;
@@ -165,7 +156,7 @@
         }
 
         &:hover {
-            background-color: #36BF9D; //Mountain Meadow
+            background-color: #36BF9D; 
             box-shadow: 0px 2px 2px 2px rgba(46, 229, 157, 0.4);
             color: #fff;
             transform: translateY(-7px);
@@ -179,10 +170,6 @@
             }
             
         }
-
-        /* &:hover.astronomycard-likebtn-heart{
-            transform: scale(1.1);
-        } */
 
         &.active {
             background: #FFF;
