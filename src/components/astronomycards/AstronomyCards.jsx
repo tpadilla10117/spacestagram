@@ -1,12 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './AstronomyCards.scss';
-/* import heart from '../../assets/icons/heart.svg'; */
 
 function AstronomyCards(props) {
 
     const {date, url, copyright, title, explanation} = props.data;
 
-    const [likes, setLikes] = useState(0);
+    const [likes, setLikes] = useState(() => {
+        const saved = localStorage.getItem('initial-posts');
+        const initialValue = JSON.parse(saved);
+        return initialValue || 0;
+    });
+    
     const [liked, setLiked] = useState(false);
 
 /* .astronomycard-likebtn functionality: */
