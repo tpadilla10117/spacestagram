@@ -79,7 +79,7 @@
             margin-top: -100px;
             /* position: absolute; */
 
-            &:disabled {
+            &.disabled {
                 pointer-events: none;
                 box-shadow: none;
                 color: #999;
