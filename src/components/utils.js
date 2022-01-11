@@ -11,5 +11,3 @@
     export { default as AstronomyCards} from '../components/astronomycards/AstronomyCards.jsx';
 
     export { default as Pagination} from '../components/pagination/Pagination.js';
-
-    export { default as ProgressBar} from '../components/Progressbar';
