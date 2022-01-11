@@ -47,10 +47,10 @@
             }
         /* TODO: need to adjust colors */
             &.active {
-                color: #FFF;
+                color: #fb3958;
                 pointer-events: none;
                 border: 1px solid #888;
-                background: #fb3958;
+                background: #fff;
             }
         }
 
@@ -72,12 +72,18 @@
             border: none;
             outline: none;
             border-radius: 20px;
-            background: #ffc838;
+            background: #777;
             box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease 0s;
             font-size: 16px;
             margin-top: -100px;
             /* position: absolute; */
+
+            &:disabled {
+                pointer-events: none;
+                box-shadow: none;
+                color: #999;
+            }
             
 
             
@@ -98,6 +104,8 @@
                 letter-spacing: 2px;
             }
         }
+
+        
     }
 
 
