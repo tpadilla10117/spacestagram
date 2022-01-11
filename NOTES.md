@@ -26,6 +26,16 @@ https://api.nasa.gov/planetary/apod?api_key=wd5U8KXHEwH3VFh4LFzXqeqMIW4vUjMqn7Et
     - {https://sass-lang.com/install} 
 
 
-<!-- TODO: Need to maintain liked state with local storage, as well as render the retrieved API data from localStorage -->
+<!-- TODO: Limitations -->
+    - 1) Would be nice to show query instructions on the UI, perhaps a modal on initial render, and a button that renders the modal on click
+    - 2) Like-state maintained in local storage persist for any similarly indexed card - need unique identifier in backend for proper state mgmt
 
-<!-- Bar of progress -->
+    TroubleShooting:
+
+    **NOTE: if query a date, you don't receive a JSON Array, but rather a string
+    **NOTE: count=integer and start_date to end_date return JSON Arrays
+
+    a) Currently, once a specific card's like button is clicked for the first time, state is maintained upon refresh
+    b) if user makes a new query, the first card to return will have it's like button showing as active; however, if refreshed on this same card, active state is removed.  IF user return's to original card, the state is also gone.  YET a refresh on the original card will return the active state on the like button
+
+

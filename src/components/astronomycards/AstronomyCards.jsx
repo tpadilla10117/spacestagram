@@ -13,13 +13,13 @@ function AstronomyCards(props) {
     });
 
     const [liked, setLiked] = useState(() => {
-        const saved = localStorage.getItem(`liked-state ${props.idx} ${title}`);
+        const saved = localStorage.getItem(`liked-state ${title}`);
         const initialValue = JSON.parse(saved);
         return initialValue || false;
     });
 
     const [likedBtn, setLikedBtn] = useState( () => {
-        const saved = localStorage.getItem(`liked-btn ${props.idx} ${title}`);
+        const saved = localStorage.getItem(`liked-btn ${title}`);
         const initialValue = JSON.parse(saved);
         return initialValue || null
     });
@@ -53,8 +53,8 @@ console.log("from the useEff :", likeBtnRef.current.id/* .className */)
     function handleLikeState() {
         if(liked === false) {
             setLiked(true);
-            setLikedBtn(`${props.idx} ${title}`);
-            localStorage.setItem(`liked-state ${props.idx} ${title}`, true);
+            setLikedBtn(`${title}`);
+            localStorage.setItem(`liked-state ${title}`, JSON.stringify( (true) ) );
             /* localStorage.setItem('liked-state', true); */
             /* localStorage.setItem(`liked-btn ${props.idx} ${title}`, JSON.stringify(likeBtnRef.current.id)) */
         
@@ -66,8 +66,8 @@ console.log("from the useEff :", likeBtnRef.current.id/* .className */)
             /* localStorage.setItem(liked); */
         } else {
             setLiked(false);
-            localStorage.removeItem(`liked-state ${props.idx} ${title}`);
-            localStorage.removeItem(`liked-btn ${props.idx} ${title}`);
+            localStorage.removeItem(`liked-state ${title}`);
+            localStorage.removeItem(`liked-btn ${title}`);
         }
     };
 console.log(likedBtn)
@@ -75,22 +75,23 @@ console.log("Value of liked ", liked)
 /* For persisting 'liked' state: */
     function persistLikeState() {
         if( likeBtnRef.current.className === "astronomycard-likebtn" ) {
-            localStorage.setItem(`liked-state ${props.idx} ${title}`, true);
+            localStorage.setItem(`liked-state ${title}`, true);
         } /* else {
             localStorage.removeItem('liked-state', false)
         } */
     };
-
+/* date=2004-06-09 */
+/* date=2017-07-08 */
     /* function handleChange(event) {
         console.log("handleChange firing: ", event.target.value)
     } */
 
-    useEffect( () => {
+    /* useEffect( () => {
         if (liked === true) {
 
-            localStorage.setItem(`liked-btn ${props.idx} ${title}`, JSON.stringify(likeBtnRef.current.id))
+            localStorage.setItem(`liked-btn ${title}`, JSON.stringify(likeBtnRef.current.id))
         }
-    }, [liked])
+    }, [liked]) */
 
     return (
         <section id='astronomycard-container'>

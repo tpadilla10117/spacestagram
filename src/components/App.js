@@ -74,10 +74,6 @@ useEffect( () => {
   storeCurrentData(astronomy)
 }, [astronomy]);
 
-
-
-/* console.log("Here is my astronomy data: ", astronomy); */
-
 /* Error Handling: */
   if (error) return <h1>{error}</h1>
 
