@@ -56,11 +56,12 @@ console.log(data[1])
 
             </section>
 
-            <div className='pagination-interactions'>
+            <nav className='pagination-interactions'>
                 <button onClick={previousPage} className={`pagination-prev ${currentPage === 1 ? 'disabled' : ''}`}>
                     <p>Prev</p>
                 </button>
-
+            
+            <div className='pagination-item-container'>
             {/* Reveal pg numbers: */}
                 {getPaginatedGroup().map( (item, idx) => (
                     <button
@@ -71,12 +72,13 @@ console.log(data[1])
                         <span>{item}</span>
                     </button>
                 ))}
+            </div>
 
 
                 <button onClick={nextPage} className={`pagination-next ${currentPage === pages ? 'disabled' : ''}`}>
                     <p>Next</p>
                 </button>
-            </div>
+            </nav>
 
             
             

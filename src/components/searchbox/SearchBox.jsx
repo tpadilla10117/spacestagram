@@ -8,7 +8,7 @@
         const {query, setQuery,search} = props;
 
         return (
-            <div className="search-box">
+            <section role="search" className="search-box">
                 
                 <input 
                     type="text"
@@ -18,7 +18,7 @@
                     value={query}
                     onKeyPress={search}
                 />
-            </div>
+            </section>
         );
     };
 
