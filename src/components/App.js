@@ -77,11 +77,12 @@ useEffect( () => {
 }, [astronomy]);
 
 /* Error Handling: */
-  if (error) return <h1>{error}</h1>
+if (error) return <h1>{error}</h1>
 
   
   return (
     <div className='App'>
+
       <ProgressBar style={ {backgroundColor:'#36BF9D', height: '8px', borderRadius: '5px'}}/>
       <HomePage query={query} setQuery={setQuery} astronomy={astronomy} setAstronomy={setAstronomy}
         apiKey={apiKey}
