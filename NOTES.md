@@ -9,7 +9,9 @@ https://api.nasa.gov/planetary/apod?api_key=wd5U8KXHEwH3VFh4LFzXqeqMIW4vUjMqn7Et
 
 
 <!-- Structure: -->
-    index.js
+    src
+        |
+        index.js
         |
         pages
         |

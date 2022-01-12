@@ -4,6 +4,7 @@
 
 ## Deployment:
 
+-Via Vercel @ {https://spacestagram-ghc1owmja-tpadilla10117.vercel.app/}
 
 ## Usage Instructions:
 - 1) In the search bar, type in an acceptable query to the NASA APOD API.  (**SEE https://github.com/nasa/apod-api ***).  I sugest trying the query, {count=50} or any other integer for count value. (Return value is a JSON Array)
