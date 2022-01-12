@@ -4,6 +4,8 @@ import { AstronomyCards, SearchBox, Pagination } from '../../components/utils';
 
 const HomePage = (props) => {
 
+/* TODO: Data returns as an array from the API still */
+
     const {query, setQuery, astronomy, setAstronomy, apiKey, BASE_URL, search} = props;
     
     return (
@@ -20,8 +22,9 @@ const HomePage = (props) => {
 
                 {/* <AstronomyCards data={astronomy} setAstronomy={setAstronomy} apiKey={apiKey} BASE_URL={BASE_URL}/> */}
 
+                {/* TODO: Pagination is responsible for rendering my Astronomy Cards */}
                 {astronomy.length > 0 ? 
-                    <Pagination data={astronomy} pageLimit={5} dataLimit={5} />
+                    <Pagination data={astronomy} pageLimit={5} dataLimit={5} astronomy={astronomy}/>
 
                 :
                     

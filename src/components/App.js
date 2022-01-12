@@ -30,7 +30,7 @@ function App() {
     
     if(event.key === "Enter") {
       fetch(`${BASE_URL}${apiKey}&${query}`)
-        .then(res => res.json())
+        .then(result => result.json())
         .then(result => {
           setQuery('');
           setAstronomy(result);
@@ -59,9 +59,9 @@ async function fetchData() {
   .catch((error) => setError(error.message));
 }
 
+/* Runs only if no data is in local Storage: */
 useEffect(() => {
  
-   
   if (astronomy.length === 0) {
     fetchData();
   }
@@ -72,11 +72,14 @@ useEffect(() => {
 /* Persisting the initial fetch in local-storage: */
 useEffect( () => {
   storeCurrentData(astronomy)
+  /* console.log("here is astronomy from the useEffect: ", astronomy); */
+  /* console.log(astronomy[1])  *//* Data in astronomy is currently indexed by the return from API */
 }, [astronomy]);
 
 /* Error Handling: */
   if (error) return <h1>{error}</h1>
 
+  
   return (
     <div className='App'>
       <ProgressBar style={ {backgroundColor:'#36BF9D', height: '8px', borderRadius: '5px'}}/>

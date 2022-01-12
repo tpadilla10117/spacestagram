@@ -30,7 +30,7 @@ https://api.nasa.gov/planetary/apod?api_key=wd5U8KXHEwH3VFh4LFzXqeqMIW4vUjMqn7Et
     - 1) Would be nice to show query instructions on the UI, perhaps a modal on initial render, and a button that renders the modal on click
     - 2) Like-state maintained in local storage persist for any similarly indexed card - need unique identifier in backend for proper state mgmt
 
-    TroubleShooting:
+    TroubleShooting Bugs:
 
     **NOTE: if query a date, you don't receive a JSON Array, but rather a string
     **NOTE: count=integer and start_date to end_date return JSON Arrays

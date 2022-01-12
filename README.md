@@ -6,11 +6,11 @@
 
 
 ## Usage Instructions:
-- 1) In the search bar, type in an acceptable query to the NASA APOD API.  (**SEE https://github.com/nasa/apod-api ***).  I sugest trying the query, {count=50} or any other integer for count value.
+- 1) In the search bar, type in an acceptable query to the NASA APOD API.  (**SEE https://github.com/nasa/apod-api ***).  I sugest trying the query, {count=50} or any other integer for count value. (Return value is a JSON Array)
 
 - 2) You can navigate the datasets with pagination by using the navigation buttons fixed to the screen
 
-- 3) In addition, you can also query by date -> formatted as {date=2014-10-01} to return a single Image
+- 3) In addition, you can also query by date -> formatted as {date=2014-10-01} to return a single Image (***NOTE: A string value is returned***)
 
 
 ## Cloning Instructions:

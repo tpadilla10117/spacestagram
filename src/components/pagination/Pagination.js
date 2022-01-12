@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {AstronomyCards} from '../utils';
 import './Pagination.scss';
 
-const Pagination = ({ data, /* RenderComponent, */ pageLimit, dataLimit}) => {
+const Pagination = ({ data, /* RenderComponent, */ pageLimit, dataLimit, astronomy}) => {
 
 const [pages] = useState(Math.round(data.length / dataLimit));
 const [currentPage, setCurrentPage] = useState(1);
@@ -10,6 +10,7 @@ const [currentPage, setCurrentPage] = useState(1);
 /* To scroll back to the top of the page after user changes: */
 useEffect( () => {
     window.scrollTo({ behavior: 'smooth', top: '0px'});
+
 }, [currentPage]);
 
 /* NextPage Button: */
@@ -28,6 +29,7 @@ function changePage(event) {
     setCurrentPage(pageNumber);
 }
 
+
 /* Returns posts equal to our limit (10) to return to user: */
 const getPaginatedData = () => {
     const startingIdx = currentPage * dataLimit - dataLimit;
@@ -42,8 +44,6 @@ const getPaginatedGroup = () => {
     return new Array(pageLimit).fill().map( (_, idx) => pageStart + idx + 1);
 };
 
-console.log(data[1])
-
     return (
         <article id="pagination">
             <h1>{data.title}</h1>
@@ -51,7 +51,7 @@ console.log(data[1])
 
         {/* Show up to 10 posts at a time: */}
             {getPaginatedData().map( (data, idx) => (
-                <AstronomyCards data={data} /* data={data} */ idx={idx} key={idx} />
+                <AstronomyCards data={data} idx={idx} key={idx} astronomy={astronomy} />
             ))}
 
             </section>
