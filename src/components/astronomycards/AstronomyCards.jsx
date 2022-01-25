@@ -3,7 +3,8 @@ import './AstronomyCards.scss';
 
 function AstronomyCards(props) {
 
-    const {date, url, copyright, title, explanation} = props.data;
+    const {date, url, copyright, title, explanation } = props.data;
+    console.log("From the astronomyCards component: ", props)
     
     const likeBtnRef = useRef(null);
 
@@ -30,6 +31,7 @@ function AstronomyCards(props) {
         setLikes( (num) => num + 1);
         localStorage.setItem(`click amount ${title}`, JSON.stringify(likes)  );
         handleLikeState();
+        
     };
 
 /* console.log(props.astronomy) */ /* TODO: Getting back the astronomy array now */
@@ -76,7 +78,7 @@ function AstronomyCards(props) {
 
                 <p className='astronomycard-details'>{explanation}</p>
                 
-                <button ref={likeBtnRef} type="button" id={props.idx} className={liked /* || likedBtn */ ? 'astronomycard-likebtn active' : 'astronomycard-likebtn' /* || likedBtn === null ? 'astronomycard-likebtn' : 'astronomycard-likebtn active' */} onClick={onLikeClick}>   
+                <button ref={likeBtnRef} type="button" id={props.data.title} className={liked /* || likedBtn */ ? 'astronomycard-likebtn active' : 'astronomycard-likebtn' /* || likedBtn === null ? 'astronomycard-likebtn' : 'astronomycard-likebtn active' */} onClick={onLikeClick}>   
 
                     <svg xmlns="http://www.w3.org/2000/svg" className="astronomycard-likebtn-heart" viewBox="0 0 20 20" fill="currentColor" height="20">
                     <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />

@@ -21,7 +21,7 @@ function App() {
     return initialValue || []
     
   });
-
+ 
   const [error, setError] = useState('');
   
 /* To dynamically render astronomy data: */
@@ -58,6 +58,7 @@ async function fetchData() {
   .then((posts) => setAstronomy(posts))
   .catch((error) => setError(error.message));
 }
+
 
 /* Runs only if no data is in local Storage: */
 useEffect(() => {
