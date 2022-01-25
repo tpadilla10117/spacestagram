@@ -4,6 +4,10 @@ import './Pagination.scss';
 
 const Pagination = ({ data, /* RenderComponent, */ pageLimit, dataLimit, astronomy}) => {
 
+/* TODO: data returns an array of the fetched data: */
+console.log("From pagination component: ", data)
+console.log("astronomy from pagination: ", astronomy)
+
 const [pages] = useState(Math.round(data.length / dataLimit));
 const [currentPage, setCurrentPage] = useState(1);
 
@@ -51,7 +55,7 @@ const getPaginatedGroup = () => {
 
         {/* Show up to 10 posts at a time: */}
             {getPaginatedData().map( (data, idx) => (
-                <AstronomyCards data={data} idx={idx} key={idx} astronomy={astronomy} />
+                <AstronomyCards data={data} idx={idx} key={idx} />
             ))}
 
             </section>
