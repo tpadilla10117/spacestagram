@@ -6,7 +6,11 @@
 * [Deployment](#Deployment)
 * [Usage Instructions](#usage-instructions)
 * [Cloning Instructions](#cloning-instructions)
-
+* [Tech Stack](#tech-stack)
+* [Dependencies](#dependencies)
+* [Limitations](#limitations)
+* [TroubleShooting](#troubleshooting--bugs)
+* [Scripts](#getting-started-with-create-react-app)
 
 ## Deployment:
 
