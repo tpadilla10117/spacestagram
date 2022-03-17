@@ -2,6 +2,9 @@
 
 - Spacestagram is an app that can pull images, and allow the user to “like” and “unlike” their favourite images.
 
+## Table of Contents:
+* [Deployment](#Deployment)
+
 ## Deployment:
 
 -Via Vercel @ {https://spacestagram-ghc1owmja-tpadilla10117.vercel.app/}
