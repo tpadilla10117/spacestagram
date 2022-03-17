@@ -19,6 +19,7 @@ function AstronomyCards(props) {
         const initialValue = JSON.parse(saved);
         return initialValue || false;
     });
+    console.log("Are we liked? :", liked) /* TODO: this value is not consistent... */
 
     const [likedBtn, setLikedBtn] = useState( () => {
         const saved = localStorage.getItem(`liked-btn ${title}`);

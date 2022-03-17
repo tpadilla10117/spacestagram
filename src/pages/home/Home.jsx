@@ -24,7 +24,7 @@ const HomePage = (props) => {
 
                 {/* TODO: Pagination is responsible for rendering my Astronomy Cards */}
                 {astronomy.length > 0 ? 
-                    <Pagination data={astronomy} pageLimit={5} dataLimit={5} astronomy={astronomy} query={query}/>
+                    <Pagination data={astronomy} pageLimit={3} dataLimit={10} astronomy={astronomy} query={query}/>
 
                 :
                     

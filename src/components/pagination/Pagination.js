@@ -43,6 +43,7 @@ const getPaginatedData = () => {
 };
 
 /* Show group of page numbers to user: */
+    //gives us page 1 since we start at index 0
 const getPaginatedGroup = () => {
     let pageStart = Math.floor( (currentPage - 1) / pageLimit) * pageLimit;
     return new Array(pageLimit).fill().map( (_, idx) => pageStart + idx + 1);
