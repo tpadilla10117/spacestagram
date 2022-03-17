@@ -4,6 +4,9 @@
 
 ## Table of Contents:
 * [Deployment](#Deployment)
+* [Usage Instructions](#usage-instructions)
+* [Cloning Instructions](#cloning-instructions)
+
 
 ## Deployment:
 
